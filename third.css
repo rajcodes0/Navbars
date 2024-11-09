@@ -1,0 +1,75 @@
+
+body,ul{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: black;
+    color: white;
+}
+.logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.nav-links{
+    list-style: none;
+    display: flex;
+   
+    gap: 50px;
+
+}
+.nav-links a{
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+  
+}
+.nav-links a:hover{
+    color: whitesmoke;
+}
+
+/* hamburger design */
+
+
+.hamburger{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+.hamburger .bar{
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.3s ease;
+}
+
+@media(max-width:768px){
+    .hamburger{
+        display: flex; 
+        /* it ensures that hamburger show */
+    }
+    .nav-links{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+    }
+
+    .nav-links.active{
+        display: flex;
+    }
+
+    .nav-links li{
+        margin: 15px 0;
+        text-align: center;
+    }
+}
